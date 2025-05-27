@@ -1,6 +1,6 @@
 import yaml
 from func import *
-from seq import *
+from code import *
 
 
 #print(data)
