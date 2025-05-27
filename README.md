@@ -1,9 +1,42 @@
-# uvm_autotb_py
+# UVM AutoTB Python Generator
 
-Reference: https://verificationguide.com/uvm/uvm-testbench-architecture/
+Automatically generate UVM testbench skeleton files using Python and a YAML configuration.
 
-code.py       : Contains UVM code to be be generated /n
-func.py       : Contains Functions to ease /n
-uvm_gen.py    : Master code file to run /n
-uvm_input.yml : YAML input file containing configurations /n
-uvm_files     : Directory which stores all generated UVM code files /n
+## Project Structure
+
+| File/Folder      | Description |
+|------------------|-------------|
+| `code.py`        | Generates UVM SystemVerilog code based on parsed config |
+| `func.py`        | Helper functions used across the project |
+| `uvm_gen.py`     | Main script to drive generation |
+| `uvm_input.yml`  | Configuration file defining components and naming |
+| `uvm_files/`     | Output directory containing all generated UVM files |
+
+## How to Use
+
+```bash
+git clone git@github.com:Sidshx/uvm_autotb_py.git
+cd uvm_autotb_py
+//Change the configurations as required in YAML file
+python uvm_gen.py
+```
+## Features
+
+- YAML-driven generation
+- Supports all essential UVM components:
+  - Sequence Item
+  - Sequence
+  - Sequencer
+  - Driver
+  - Monitor
+  - Agent
+  - Scoreboard
+  - Environment
+  - Test
+  - Top-level testbench
+- Modular and extendable design
+
+## Reference
+
+Based on the UVM Testbench Architecture from:  
+[Verification Guide – UVM Testbench Architecture](https://verificationguide.com/uvm/uvm-testbench-architecture/)
