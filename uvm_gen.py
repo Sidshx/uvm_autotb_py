@@ -1,19 +1,29 @@
 import yaml
 from func import *
+from seq import *
 
-files = ["uvm_seq_item.sv", "uvm_sequence.sv", "uvm_sequencer.sv", "uvm_driver.sv", "uvm_monitor.sv", "uvm_agent.sv", "uvm_scoreboard.sv", "uvm_env.sv", "uvm_test.sv", "tbench_top.sv"]
-
-with open('uvm_input.yml', 'r') as f:
-    data = yaml.safe_load(f)
 
 #print(data)
-directory = "uvm_files"
 os.makedirs(directory, exist_ok=True)
 
 file_check(directory, files)
 
 for name in files:
-    path = os.path.join(directory, name)
+    path = os.path.join(directory, f"{config['File_Name']}_{name}")
     f = open(path, "x")
-    f.write(f"//File Name: {name}\n")
+    f.write(f"//File Name: {config['File_Name']}_{name}\n")
     print(f"Created: {path}")
+
+seq_gen(config, directory, f"{config['File_Name']}_seq_item.sv", f"{config['File_Name']}_seq.sv", f"{config['File_Name']}_seqr.sv")
+driver(config, directory, f"{config['File_Name']}_driver.sv")
+monitor(config, directory, f"{config['File_Name']}_monitor.sv")
+agent(config, directory, f"{config['File_Name']}_agent.sv")
+scoreboard(config, directory, f"{config['File_Name']}_scoreboard.sv")
+env(config, directory, f"{config['File_Name']}_env.sv")
+test(config, directory, f"{config['File_Name']}_test.sv")
+top(config, directory, f"tbench_top.sv")
+
+
+
+
+
