@@ -7,7 +7,6 @@ Automatically generate UVM testbench skeleton files using Python and a YAML conf
 | File/Folder      | Description |
 |------------------|-------------|
 | `code.py`        | Generates UVM SystemVerilog code based on parsed config |
-| `func.py`        | Helper functions used across the project |
 | `uvm_gen.py`     | Main script to drive generation |
 | `uvm_input.yml`  | Configuration file defining components and naming |
 | `uvm_files/`     | Output directory containing all generated UVM files |
