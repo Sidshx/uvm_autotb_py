@@ -1,1 +1,13 @@
-File_Name: fifo
+File_Name: uart
+
+Testbench:
+  Envs: 2    # int: how many uvm_environments to generate
+  Agents: 2   # int: default number of agents per env
+  default_per_agent: # how many driver/monitor/seq each agent gets
+    Drivers:    2
+    Monitors:   2
+    Sequencers: 3
+  overrides:        # optional per-agent overrides
+    agent0:
+      Drivers:    4
+      Sequencers: 4
