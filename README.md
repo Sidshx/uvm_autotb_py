@@ -17,7 +17,8 @@ Automatically generate UVM testbench skeleton files using Python and a YAML conf
 ```bash
 git clone git@github.com:Sidshx/uvm_autotb_py.git
 cd uvm_autotb_py
-//Change the configurations as required in YAML file
+//Change the configurations as required in YAML file\
+cd Code
 python uvm_gen.py
 ```
 ## Features
